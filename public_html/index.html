@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Num primo</title>
+	<script>
+
+		function findNumPrimo() {
+			var n = document.getElementById('valor').value;
+
+			var numPrimos = []; // array para armazenar os resultados 
+
+			for (var i = 2 ; i < n ; i++ ) { // função que procura o número primo 
+				var divisores = 0;
+				for (var x = 2 ; x < i ; x++) { // função que realiza o calculo pra ferificar se é numero primo ou não
+					if(i % x == 0) { // aqui faz a verificação se o numero possui algum divisor sem ser 1 ou ele mesmo
+						divisores++;
+					}
+				}
+				if (divisores == 0) { // o numero que não possui divisor é um numero primo 
+					numPrimos.push(i)
+				}
+			}
+
+			document.write(numPrimos);
+
+			return numPrimos;
+		
+		}
+		
+
+	</script>
+</head>
+<body>
+	<h2>Contagem de números primos</h2><br><br>
+	<p>Digite um número: <input type="text" id="valor"><p>
+	<input type="submit" name="submit" onclick="findNumPrimo()">
+</body>
+</html>
